@@ -12,3 +12,13 @@ def get_char_count(file_contents):
 		else:
 			char_count[i] += 1
 	return char_count
+
+def get_sort(my_dict):
+	# Filter alphabetic keys only
+	filtered_items = {k: v for k, v in my_dict.items() if k.isalpha()}
+
+	# Sort by value (item[1]) in descending order
+	for key, value in sorted(filtered_items.items(), key=lambda item: item[1], reverse=True):
+		print(f"{key}: {value}")
+
+	return
