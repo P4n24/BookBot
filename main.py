@@ -1,7 +1,14 @@
 from stats import get_num_words, get_char_count, get_sort
+import sys
 
-with open("./books/frankenstein.txt") as f:
-	file_contents = f.read()
+if len(sys.argv) > 1:
+	filename = sys.argv[1]
+	with open(filename, encoding='utf-8', errors='ignore') as f:
+		file_contents = f.read()
+else:
+	print("Usage: python3 main.py <path_to_book>")
+	sys.exit(1)
+
 print("============ BOOKBOT ============")
 print("Analyzing book found at... ")
 print("----------- Word Count ----------")
